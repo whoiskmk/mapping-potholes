@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encoding methods</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        #right-panel select, #right-panel input {
+            font-size: 15px;
+        }
+
+        #right-panel select {
+            width: 100%;
+        }
+
+        #right-panel i {
+            font-size: 12px;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+            width: 50%;
+            float: left;
+        }
+        #right-panel {
+            width: 46%;
+            float: left;
+        }
+        #encoded-polyline {
+            height: 100px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="right-panel">
+    <div>Encoding:</div>
+    <textarea id="encoded-polyline"></textarea>
+</div>
+<script>
+    // This example requires the Geometry library. Include the libraries=geometry
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry">
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: {lat: 29.951065, lng: -90.071533}
+        });
+        layer = new google.maps.FusionTablesLayer({
+            map: map,
+            heatmap: { enabled: false },
+            query: {
+                select: "col14",
+                from: "1PXDxGR3f2m9lZU1t7_FRdc4bzaNWyIyvT-H_K25r",
+                where: "col1 \x3d \x27Pothole/Roadway Surface Repair\x27 and col4 \x3d \x27Open\x27"
+            },
+            options: {
+                styleId: 2,
+                templateId: 2
+            }
+        });
+        layer.setMap(map);
+        var poly = new google.maps.Polyline({
+            strokeColor: '#000000',
+            strokeOpacity: 1,
+            strokeWeight: 3,
+            map: map
+        });
+
+        // Add a listener for the click event
+        google.maps.event.addListener(map, 'click', function(event) {
+            addLatLngToPoly(event.latLng, poly);
+        });
+    }
+
+    /**
+     * Handles click events on a map, and adds a new point to the Polyline.
+     * Updates the encoding text area with the path's encoded values.
+     */
+    function addLatLngToPoly(latLng, poly) {
+        var path = poly.getPath();
+        // Because path is an MVCArray, we can simply append a new coordinate
+        // and it will automatically appear
+        path.push(latLng);
+
+        // Update the text field to display the polyline encodings
+        var encodeString = google.maps.geometry.encoding.encodePath(path);
+        if (encodeString) {
+            document.getElementById('encoded-polyline').value = encodeString;
+        }
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkvRjIREM6qbWmmx__DWb_WgzLgmOD9NM&libraries=geometry&callback=initMap"
+        async defer></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkvRjIREM6qbWmmx__DWb_WgzLgmOD9NM&libraries=visualization">
+</script>
+</body>
+</html>

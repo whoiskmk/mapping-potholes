@@ -1,10 +1,25 @@
-// See post: http://asmaloney.com/2015/06/code/clustering-markers-on-leaflet-maps
+var map,
+    dir;
 
-var map = L.map( 'map', {
-  center: [29.951065, -90.071533],
-  minZoom: 2,
-  zoom: 13
+map = L.map( 'map', {
+    center: [29.951065, -90.071533],
+    minZoom: 2,
+    zoom: 13
 });
+
+dir = MQ.routing.directions();
+
+dir.route({
+    locations: [
+        '1750 st charles avenue, new orleans',
+        '2520 joseph street, new orleans'
+    ]
+});
+
+map.addLayer(MQ.routing.routeLayer({
+    directions: dir,
+    fitBounds: true
+}));
 
 L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',

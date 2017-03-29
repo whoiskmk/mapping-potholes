@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-traffic.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var mapLayer = MQ.mapLayer(),
+                    map;
+
+            map = L.map('map', {
+                layers: mapLayer,
+                center: [ 29.951065, -90.071533 ],
+                zoom: 12,
+            });
+
+            L.control.layers({
+                'Map': mapLayer,
+                'Satellite': MQ.satelliteLayer(),
+                'Hybrid': MQ.hybridLayer()
+            }, {
+                'Traffic Flow': MQ.trafficLayer({layers: ['flow']}),
+                'Traffic Incidents': MQ.trafficLayer({layers: ['incidents']})
+            }).addTo(map)
+
+        };
+    </script>
+</head>
+
+<body style='border:0; margin: 0'>
+<div id='map' style='width: 100%; height:530px;'></div>
+<script type='text/javascript' src='MQpotholes.js'></script>
+<script type='text/javascript' src='maps/leaf-demo.js'></script>
+</body>
+</html>

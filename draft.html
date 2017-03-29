@@ -31,7 +31,6 @@
             height: 100%;
             float: left;
             width: 63%;
-            height: 100%;
         }
         #right-panel {
             float: right;
@@ -84,7 +83,7 @@
             computeTotalDistance(directionsDisplay.getDirections());
         });
 
-        displayRoute('New Orleans, LA', 'Metarie, LA', directionsService,
+        displayRoute('New Orleans, LA', '2520 Joseph Street, New Orleans, LA', directionsService,
             directionsDisplay);
     }
 
@@ -92,9 +91,9 @@
         service.route({
             origin: origin,
             destination: destination,
-            waypoints: [{location: 'New Orleans, LA'}, {location: 'Metarie, LA'}],
+            waypoints: [{location: 'New Orleans, LA'}, {location: '2520 Joseph Street, New Orleans, LA'}],
             travelMode: 'DRIVING',
-            avoidTolls: true
+            provideRouteAlternatives: true
         }, function(response, status) {
             if (status === 'OK') {
                 display.setDirections(response);
@@ -114,8 +113,7 @@
         document.getElementById('total').innerHTML = total + ' km';
     }
 </script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkvRjIREM6qbWmmx__DWb_WgzLgmOD9NM&callback=initMap">
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkvRjIREM6qbWmmx__DWb_WgzLgmOD9NM&libraries=geometry&callback=initMap"
+        async defer></script>
 </body>
 </html>

@@ -1,25 +1,10 @@
-var map,
-    dir;
+var map;
 
 map = L.map( 'map', {
     center: [29.951065, -90.071533],
     minZoom: 2,
     zoom: 13
 });
-
-dir = MQ.routing.directions();
-
-dir.route({
-    locations: [
-        '1750 st charles avenue, new orleans',
-        '2520 joseph street, new orleans'
-    ]
-});
-
-map.addLayer(MQ.routing.routeLayer({
-    directions: dir,
-    fitBounds: true
-}));
 
 L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -32,23 +17,16 @@ var myIcon = L.icon({
   iconUrl: myURL + 'images/pin24.png',
   iconRetinaUrl: myURL + 'images/pin48.png',
   iconSize: [29, 24],
-  iconAnchor: [9, 21],
-  popupAnchor: [0, -14]
+  iconAnchor: [9, 21]
 });
 
 var markerClusters = L.markerClusterGroup();
 
 for ( var i = 0; i < markers.length; ++i )
 {
-  var popup = markers[i].name +
-              '<br/>' + markers[i].city +
-              '<br/><b>IATA/FAA:</b> ' + markers[i].iata_faa +
-              '<br/><b>ICAO:</b> ' + markers[i].icao +
-              '<br/><b>Altitude:</b> ' + Math.round( markers[i].alt * 0.3048 ) + ' m' +
-              '<br/><b>Timezone:</b> ' + markers[i].tz;
 
-  var m = L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} )
-                  .bindPopup( popup );
+
+  var m = L.marker( [markers[i].lat, markers[i].lng], {icon: myIcon} );
 
   markerClusters.addLayer( m );
 }

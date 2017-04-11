@@ -3,12 +3,13 @@
 <html>
 <head>
     <title>MapQuest Leaflet plugin with Control Point Routing</title>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
     <script src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
     <script src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
     <script type="text/javascript">
-        "use strict";
+        //"use strict";
 
         var L, MQ, map, idx = 0, cps, rl;
 
@@ -45,63 +46,63 @@
                     var t = "<nobr>Radius:<select onchange='changepar(" +
                         cps.getLayerId(c) + ", \"r\", this[selectedIndex].value);'>" +
                         "<option";
-                    if (r == 80.46600000000001) {
+                    if (r === 80.46600000000001) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">0.1</option>" +
                         "<option";
-                    if (r == 400) {
+                    if (r === 400) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">0.5</option>" +
                         "<option";
-                    if (r == 804.66) {
+                    if (r === 804.66) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">1</option>" +
                         "<option";
-                    if (r == 4023.2999999999997) {
+                    if (r === 4023.2999999999997) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">5</option>" +
                         "</select><br/>Weight:<select onchange='changepar(" + cps.getLayerId(c) + ", \"w\", this[selectedIndex].value);'>" +
                         "<option";
-                    if (w == 0.125 && e.target.options.fillColor === 'green') {
+                    if (w === 0.125 && e.target.options.fillColor === 'green') {
                         t = t + " selected='selected'";
                     }
                     t = t + ">0.75</option>" +
                         "<option";
-                    if (w == 0.25) {
+                    if (w === 0.25) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">0.5</option>" +
                         "<option";
-                    if (w == 0.375) {
+                    if (w === 0.375) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">0.25</option>" +
                         "<option";
-                    if (w == 0.45) {
+                    if (w === 0.45) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">0.1</option>" +
                         "<option";
-                    if (w == 0.01) {
+                    if (w === 0.01) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">2</option>" +
                         "<option";
-                    if (w == 0.025) {
+                    if (w === 0.025) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">5</option>" +
                         "<option";
-                    if (w == 0.125 && e.target.options.fillColor === 'red') {
+                    if (w === 0.125 && e.target.options.fillColor === 'red') {
                         t = t + " selected='selected'";
                     }
                     t = t + ">25</option>" +
                         "<option";
-                    if (w == 0.5) {
+                    if (w === 0.5) {
                         t = t + " selected='selected'";
                     }
                     t = t + ">100</option>" +
@@ -171,15 +172,6 @@
             cps.removeLayer(cps.getLayer(a));
         }
     </script>
-    <style>
-        html, body {
-            font-family: arial, sans-serif;
-        }
-        #map {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
 </head>
 <body onload="init();">
 <div id="map"></div>

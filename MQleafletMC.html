@@ -46,7 +46,7 @@
             });
 
             markers.forEach( function(i) {
-                L.marker( [markers[i].lat, markers[i].lng], {})
+                L.marker( [markers[i].lat, markers[i].lng], {icon: sol}).addTo(mkrs);
 
             })
 

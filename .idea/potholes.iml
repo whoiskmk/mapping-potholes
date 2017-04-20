@@ -14,5 +14,10 @@
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="leaflet.markercluster" level="application" />
     <orderEntry type="library" name="mapbox-gl" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="mapbox-gl" level="application" />
+    <orderEntry type="library" name="mapbox-gl-directions" level="application" />
+    <orderEntry type="library" name="mapbox" level="application" />
+    <orderEntry type="library" name="mapbox.directions" level="application" />
   </component>
 </module>

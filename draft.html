@@ -83,7 +83,7 @@
             computeTotalDistance(directionsDisplay.getDirections());
         });
 
-        displayRoute('New Orleans, LA', '2520 Joseph Street, New Orleans, LA', directionsService,
+        displayRoute('6329 Freret St, New Orleans, LA 70118', '4716 Freret St, New Orleans, LA 70115', directionsService,
             directionsDisplay);
     }
 
@@ -91,7 +91,7 @@
         service.route({
             origin: origin,
             destination: destination,
-            waypoints: [{location: 'New Orleans, LA'}, {location: '2520 Joseph Street, New Orleans, LA'}],
+           // waypoints: [{location: '1500 Sugar Bowl Dr, New Orleans, LA 70112'}, {location: '6329 Freret St, New Orleans, LA 70118'}],
             travelMode: 'DRIVING',
             provideRouteAlternatives: true
         }, function(response, status) {

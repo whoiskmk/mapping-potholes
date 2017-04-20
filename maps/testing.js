@@ -3,7 +3,7 @@
  */
 
 
-var map, MQ, myURL, myIcon, cpts;
+var L, map, MQ, myURL, myIcon, cpts;
 //var icon = "http://maps/images/pin24.png";
 function init() {
 
@@ -13,14 +13,10 @@ function init() {
         zoom: 10
     });
 
-    L.control.layers({
-        'Map': MQ.mapLayer(),
-        'Dark': MQ.darkLayer(),
-        'Light': MQ.lightLayer(),
-        'Satellite': MQ.satelliteLayer()
-    }).addTo(map);
+    L.control.scale().addTo(map);
 
-    cpts = new L.featureGroup();
+
+    cpts = new L.layerGroup();
     cpts.addTo(map);
 
 
@@ -34,10 +30,16 @@ function init() {
     });
 
     for (var i = 0; i < markers.length; ++i) {
-        var m = L.marker([markers[i].lat, markers[i].lng], {icon: myIcon});
-        cpts.addLayer(m);
+        var m = L.marker(
+            [markers[i].lat, markers[i].lng],
+            {icon: myIcon}
+            ).addTo(cpts);
+        //cpts.addLayer(m);
     }
-    map.addLayer(cpts);
+
+
+    //map.addLayer(MQ.mapLayer());
+    //map.addLayer(cpts);
 }
 window.onload = init;
 

@@ -3,22 +3,58 @@
 <html>
 <head>
     <title>MapQuest Leaflet plugin with Control Point Routing</title>
-    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="//www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script type="text/javascript" src="//unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <script type="text/javascript" src="//leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-    <script src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-    <script type="text/javascript">
-        //"use strict";
 
-        var L, MQ, map, idx = 0, cps, rl;
+    <script src="//www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="//www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script type="text/javascript" src="maps/markers.js"></script>
+
+    <script type="text/javascript">
+        "use strict";
+
+        var L, map, MQ, idx = 0, cps, rl, potholes;
+
+        function addPotholes() {
+
+            potholes = new L.markerClusterGroup();
+
+            markers.forEach(function(a){
+                potholes.addLayer(
+                    new L.marker(
+                        [markers[a].lat, markers[a].lng]
+                    )
+                );
+            });
+            map.addLayer(potholes);
+
+        }
+
+
 
         function init() {
+
             map = L.map('map', {
                 layers: MQ.mapLayer(),
                 center: [29.951065, -90.071533],
                 zoom: 15
             });
+
+
 
 
             L.control.scale().addTo(map);
@@ -30,7 +66,7 @@
 
                 var c = L.circle(
                     [e.latlng.lat, e.latlng.lng],
-                    400,
+                    100,
                     {
                         id: idx,
                         cweight: 100,
@@ -106,13 +142,14 @@
                         t = t + " selected='selected'";
                     }
                     t = t + ">100</option>" +
-                        "</select><br/><input type='button' value='remove' onclick='removepoi(" + cps.getLayerId(c) + ")'/></nobr>"
+                        "</select><br/><input type='button' value='remove' onclick='removepoi(" + cps.getLayerId(c) + ")'/></nobr>";
                     e.target.bindPopup(t).openPopup();
                 });
                 idx = idx + 1;
             });
 
         }
+
 
         function routeit() {
             var cpc = [], dir = MQ.routing.directions();
@@ -171,15 +208,31 @@
         function removepoi(a) {
             cps.removeLayer(cps.getLayer(a));
         }
+
+
+
     </script>
+    <style>
+        html, body {
+            font-family: arial, sans-serif;
+        }
+        #map {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+
 </head>
 <body onload="init();">
 <div id="map"></div>
 <div id="ipt">
-    Create a route by hitting the Route button.  Then create control points by clicking the map.  Adjust the control points by clicking the circle for the popup and set the radius, set the weight, or remove the control point.  Then click Route again.</br>
+    <br>Create a route by hitting the Route button.  Then create control points by clicking the map.  Adjust the control points by clicking the circle for the popup and set the radius, set the weight, or remove the control point.  Then click Route again.</br>
     <input type="text" id="orig" value="new orleans, LA"/>
     <input type="text" id="dest" value="metarie, LA"/>
     <input type="button" value="Route" onclick="routeit();"/>
+    <input type="button" value="Potholes" onclick="addPotholes();"/>
 </div>
+
+
 </body>
 </html>

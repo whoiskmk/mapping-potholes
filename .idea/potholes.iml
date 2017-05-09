@@ -19,5 +19,7 @@
     <orderEntry type="library" name="mapbox-gl-directions" level="application" />
     <orderEntry type="library" name="mapbox" level="application" />
     <orderEntry type="library" name="mapbox.directions" level="application" />
+    <orderEntry type="library" name="jquery-2.1.1" level="application" />
+    <orderEntry type="library" name="OpenLayers" level="application" />
   </component>
 </module>

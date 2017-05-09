@@ -4,8 +4,9 @@
 
 
 var L, map, MQ, myURL, myIcon, cpts;
-//var icon = "http://maps/images/pin24.png";
+
 function init() {
+
 
     map = L.map('map', {
         layers: MQ.mapLayer(),
@@ -16,7 +17,7 @@ function init() {
     L.control.scale().addTo(map);
 
 
-    cpts = new L.layerGroup();
+    cpts = new L.markerClusterGroup();
     cpts.addTo(map);
 
 
@@ -29,17 +30,17 @@ function init() {
         iconAnchor: [9, 21]
     });
 
-    for (var i = 0; i < markers.length; ++i) {
-        var m = L.marker(
+    for (let i = 0; i < markers.length; ++i) {
+        let m = L.marker(
             [markers[i].lat, markers[i].lng],
             {icon: myIcon}
             ).addTo(cpts);
-        //cpts.addLayer(m);
+        cpts.addLayer(m);
     }
 
 
-    //map.addLayer(MQ.mapLayer());
-    //map.addLayer(cpts);
+    map.addLayer(MQ.mapLayer());
+    map.addLayer(cpts);
 }
 window.onload = init;
 
@@ -47,9 +48,9 @@ window.onload = init;
 
 
 
+/*
 
-
-/*var L, MQ, map, idx = 0, cps, rl;
+var L, MQ, map, idx = 0, cps, rl;
 
 function init() {
     map = L.map('map', {
@@ -65,13 +66,12 @@ function init() {
 
 
 }
+
 */
 
 
-
-
-
-/*var tiles = L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+/*
+var tiles = L.tileLayer( 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     subdomains: ['a','b','c']
 }),
@@ -82,7 +82,7 @@ var map = L.map('map', {center: latlng, zoom: 15, layers: [tiles]});
 var potholes = L.markerClusterGroup({ spiderfyOnMaxZoom: false, showCoverageOnHover: false, zoomToBoundsOnClick: false });
 
 function populate() {
-    var myURL = jQuery( 'script[src$="leaf-demo.js"]' ).attr( 'src' ).replace( 'leaf-demo.js', '' );
+    var myURL = jQuery( 'script[src$="testing.js"]' ).attr( 'src' ).replace( 'testing.js', '' );
     var myIcon = L.icon({
         iconUrl: myURL + 'images/pin24.png',
         iconRetinaUrl: myURL + 'images/pin48.png',
@@ -102,7 +102,9 @@ potholes.on('clusterclick', function(a) {
 
 populate();
 map.addLayer(potholes);
-TEST OF MARKER CLUSTER DOCUMENTATION FROM GITHUB ABOVE */
+
+*/
+/*TEST OF MARKER CLUSTER DOCUMENTATION FROM GITHUB ABOVE */
 
 
 

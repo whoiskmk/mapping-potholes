@@ -1,27 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Pothole Clusters</title>
+    <title>Pothole Clusters in New Orleans</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-    <script src="//www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-
-    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
-    <script type="text/javascript" src="//unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-    <script type="text/javascript" src="//leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
-    <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-
-
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="leaflet-routing-machine.css" />
@@ -31,7 +16,10 @@
     <link rel='stylesheet' type='text/css' href='css/style.css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
 
+    <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
 
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
@@ -49,44 +37,28 @@
     <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
     <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
 
-    <script type="text/javascript" src="maps/markers.js"></script>
-
-    <script type="text/javascript" src="maps/testing.js"></script>
-
-    <style>
-        html, body {
-            font-family: arial, sans-serif;
-        }
-        #map {
-            width: 800px;
-            height: 600px;
-        }
-    </style>
-
-
-
 </head>
 
 <body>
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css' type='text/css' />
 <div class="container">
     <div class="container">
-        <h1>Leaflet Pothole Clusters</h1>
+        <h1>PLOTHOLES</h1>
+        <h2>Pothole Clusters in New Orleans</h2>
 
         <p>Here's an interactive map indicating where potholes are located in New Orleans.  The data comes from <a href="https://data.nola.gov/City-Administration/311-Calls-2012-Present-/3iz8-nghx" target="_blank">NOLA.gov</a>.
 
-        <div id="map"></div>
+        <div id="map" style="width: 800px; height: 600px; border: 1px solid #AAA;"></div>
     </div>
 </div>
 
 
-<div id="ipt">
-    <br>Create a route by hitting the Route button.  Then create control points by clicking the map.  Adjust the control points by clicking the circle for the popup and set the radius, set the weight, or remove the control point.  Then click Route again.</br>
-    <input type="text" id="orig" value="new orleans, LA"/>
-    <input type="text" id="dest" value="metarie, LA"/>
-    <input type="button" value="Route" onclick="routeit();"/>
 
-</div>
-
+<script type='text/javascript' src='maps/markers.js'></script>
+<script type='text/javascript' src='maps/leaf-demo.js'></script>
 
 </body>
 </html>

@@ -4,79 +4,98 @@
     <title>Leaflet Pothole Clusters</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
     <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-    <script src="//www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-traffic.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
 
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+
     <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
     <script type="text/javascript" src="//unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
     <script type="text/javascript" src="//leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
     <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
 
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+    <script type="text/javascript" src="maps/markers.js"></script>
+    <script type="text/javascript">
+        "use strict";
+/*
 
+        var L, MQ;
 
+        window.onload = function() {
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <link rel="stylesheet" href="leaflet-routing-machine.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script src="leaflet-routing-machine.js"></script>
+            var map, potholes;
+            potholes = L.markerClusterGroup();
 
-    <link rel='stylesheet' type='text/css' href='css/style.css'>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
+            markers.forEach(function(a){
+                potholes.addLayer(
+                    new L.marker(
+                        [markers[a].lat, markers[a].lng]
+                    )
+                );
+            }) ;
 
+            map = L.map('map');
+            map.fitBounds(potholes.getBounds());
+            map.addLayer(MQ.mapLayer());
+            map.addLayer(potholes);
+        };
+*/
+        var map;
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
-    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+        // An example of using the MQA.EventUtil to hook into the window load event and execute the defined
+        // function passed in as the last parameter. You could alternatively create a plain function here and
+        // have it executed whenever you like (e.g. <body onload="yourfunction">).
 
-    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-geocoding.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
-    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-traffic.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+        MQA.EventUtil.observe(window, 'load', function() {
 
+            // create an object for options
+            var options = {
+                elt: document.getElementById('map'),       // ID of map element on page
+                zoom: 10,                                  // initial zoom level of the map
+                latLng: { lat: 29.951065, lng: -90.071533 },  // center of map in latitude/longitude
+                mtype: 'map',                              // map type (map, sat, hyb); defaults to map
+                bestFitMargin: 0,                          // margin offset from map viewport when applying a bestfit on shapes
+                zoomOnDoubleClick: true                    // enable map to be zoomed in when double-clicking
+            };
 
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+            // construct an instance of MQA.TileMap with the options object
+            window.map = new MQA.TileMap(options);
+        });
 
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
-    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
-    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
-
+    </script>
     <script type="text/javascript" src="maps/markers.js"></script>
 
     <script type="text/javascript" src="maps/testing.js"></script>
-
     <style>
-        html, body {
-            font-family: arial, sans-serif;
-        }
         #map {
             width: 800px;
             height: 600px;
         }
     </style>
 
-
-
 </head>
 
-<body>
+<body onload='init();'>
 <div class="container">
     <div class="container">
         <h1>Leaflet Pothole Clusters</h1>
 
         <p>Here's an interactive map indicating where potholes are located in New Orleans.  The data comes from <a href="https://data.nola.gov/City-Administration/311-Calls-2012-Present-/3iz8-nghx" target="_blank">NOLA.gov</a>.
 
-        <div id="map"></div>
     </div>
 </div>
+<div id="map"></div>
 
 
 <div id="ipt">

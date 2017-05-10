@@ -3,6 +3,7 @@
  */
 
 
+
 var L, map, MQ, myURL, myIcon, cpts;
 
 function init() {
@@ -43,7 +44,6 @@ function init() {
     map.addLayer(cpts);
 }
 window.onload = init;
-
 
 
 

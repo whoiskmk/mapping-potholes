@@ -9,9 +9,7 @@ function routeit() {
             document.getElementById('orig').value,
             document.getElementById('dest').value
         ],
-        options: {
-            routeControlPointCollection: cpc
-        }
+
     });
 
 

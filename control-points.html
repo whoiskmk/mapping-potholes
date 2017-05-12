@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MapQuest Leaflet plugin with Control Point Routing</title>
+  <!--  <title>MapQuest Leaflet plugin with Control Point Routing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
 
@@ -28,13 +28,50 @@
 
 
     <script type="text/javascript" src="maps/markers.js"></script>
+    <script type="text/javascript" src="maps/testing.js"></script>
+-->
+    <title>Leaflet Pothole Clusters</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>-->
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <!-- <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+     <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>-->
+
+    <!--<link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script type="text/javascript" src="//unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>-->
+
+
+
+
+    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script type="text/javascript" src="//leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+
+    <script src="leaflet.geocsv-src.js"></script>
+
+    <script type="text/javascript" src="maps/markers.js"></script>
+    <script type="text/javascript" src="maps/testing.js"></script>
+
+
 
     <script type="text/javascript">
         "use strict";
 
         var L, map, MQ, idx = 0, cps, rl, potholes;
 
-        function addPotholes() {
+        /*function addPotholes() {
 
             potholes = new L.markerClusterGroup();
 
@@ -49,7 +86,7 @@
 
         }
 
-
+*/
 
         function init() {
 
@@ -67,7 +104,35 @@
             cps = new L.layerGroup();
             cps.addTo(map);
 
-            map.on('click', function(e) {
+            var potholes = new L.markerClusterGroup({
+                maxClusterRadius: 40
+            }).addTo(cps);
+
+
+            myURL = jQuery('script[src$="maps/testing.js"]').attr('src').replace('maps/testing.js', '');
+
+            myIcon = L.icon({
+                iconUrl: myURL + 'images/pin24.png',
+                iconRetinaUrl: myURL + 'images/pin48.png',
+                iconSize: [29, 24],
+                iconAnchor: [9, 21]
+            });
+
+            for (let i = 0; i < markers.length; ++i) {
+                let m = L.marker(
+                    [markers[i].lat, markers[i].lng],
+                    {icon: myIcon}
+                ).addTo(potholes);
+                potholes.addLayer(m);
+            }
+
+
+            map.addLayer(MQ.mapLayer());
+            map.addLayer(cps);
+
+
+
+           /* map.on('click', function(e) {
 
                 var c = L.circle(
                     [e.latlng.lat, e.latlng.lng],
@@ -152,7 +217,7 @@
                 });
                 idx = idx + 1;
             });
-
+*/
         }
 
 
@@ -235,7 +300,8 @@
     <input type="text" id="orig" value="new orleans, LA"/>
     <input type="text" id="dest" value="metarie, LA"/>
     <input type="button" value="Route" onclick="routeit();"/>
-    <input type="button" value="Potholes" onclick="addPotholes();"/>
+    <input type="button" id="routeButton" value="Potholes" onclick="init();" />
+
 </div>
 
 

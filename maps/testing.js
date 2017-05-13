@@ -8,31 +8,16 @@ var map, L, MQ, myURL, myIcon, cpts;
 
 function init() {
 
-   /* map = L.map('map', {
+    map = L.map('map', {
         layers: MQ.mapLayer(),
         center: [29.951065, -90.071533],
         zoom: 13
     });
 
-    var dir = MQ.routing.directions();
 
-    dir.route({
-
-        locations: [
-            'new orleans LA',
-            'metarie LA'
-        ]
-    });
-
-
-    map.addLayer(MQ.routing.routeLayer({
-        directions: dir,
-        fitBounds: true
-
-    }));
 
     L.control.scale().addTo(map);
-    */
+
 
     cpts = new L.layerGroup();
     cpts.addTo(map);
@@ -41,10 +26,15 @@ function init() {
 
     var potholes = new L.markerClusterGroup({
         maxClusterRadius: 40
-    }).addTo(cpts);
+    });
+    for (var i = 0; i < markers.length; i++) {
+        var latlng = new L.LatLng(markers[i].lat, markers[i].lng);
+        potholes.addLayer(new L.Circle(latlng, 10));
+    }
+    map.addLayer(potholes);
 
 
-    myURL = jQuery('script[src$="testing.js"]').attr('src').replace('testing.js', '');
+    /*myURL = jQuery('script[src$="testing.js"]').attr('src').replace('testing.js', '');
 
     myIcon = L.icon({
         iconUrl: myURL + 'images/pin24.png',
@@ -63,9 +53,9 @@ function init() {
 
     //map.addLayer(MQ.mapLayer());
     //map.addLayer(cpts);
-
+*/
 }
-//window.onload = init;
+window.onload = init;
 /*function routeit() {
 
     var dir = MQ.routing.directions();

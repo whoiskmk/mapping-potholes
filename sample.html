@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Circle Cluster</title>
+
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-geocoding.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+
+    <script src="js/leaflet.markercluster.js"></script>
+    <style>
+        body { margin: 0; }
+        #map { height: 100%; }
+    </style>
+    <script>
+        function init() {
+
+
+            var map = L.map('map').setView([25, -4], 3);
+            L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors',
+                maxZoom: 14, minZoom: 2
+            }).addTo(map);
+
+            var markerLayer = new L.MarkerClusterGroup();
+            for( var i = 0; i < 50; i++ ) {
+                var latlon = new L.LatLng(Math.random() * 30.0 + 15.0, Math.random() * 60.0);
+                markerLayer.addLayer(new L.Circle(latlon, 100));
+            }
+            map.addLayer(markerLayer);
+        }
+    </script>
+</head>
+<body onload="init();">
+<div id="map"></div>
+</body>
+</html>

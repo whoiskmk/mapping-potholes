@@ -7,12 +7,14 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>-->
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <!--<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>-->
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
 
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <!--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
    <!-- <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
-    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>-->
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
 
     <!--<link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
     <script type="text/javascript" src="//unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>-->
@@ -20,9 +22,9 @@
 
 
 
-    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="//leaflet.github.io/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
-    <script type="text/javascript" src="//leaflet.github.io/Leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="dist/MarkerCluster.Default.css" />
+    <script src="dist/leaflet.markercluster-src.js"></script>
 
     <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
 
@@ -30,33 +32,97 @@
     <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
 
 
-    <script src="leaflet.geocsv-src.js"></script>
-
-    <script type="text/javascript" src="maps/markers.js"></script>
-    <script type="text/javascript" src="maps/testing.js"></script>
+    <script type="text/javascript" src="maps/potholeMarkers.js"></script>
+    <!--<script type="text/javascript" src="maps/testing.js"></script>-->
 
 
-   <!-- <script type="text/javascript">
+    <script type="text/javascript">
        // "use strict";
 
+       var map, L, MQ, cpts, rl;
 
-        MQA.EventUtil.observe(window, 'load', function() {
+       function init() {
 
-            // create an object for options
-            var options = {
-                elt: document.getElementById('map'),       // ID of map element on page
-                zoom: 15,                                  // initial zoom level of the map
-                latLng: { lat: 29.951065, lng: -90.071533 },  // center of map in latitude/longitude
-                mtype: 'map',                              // map type (map, sat, hyb); defaults to map
-                bestFitMargin: 0,                          // margin offset from map viewport when applying a bestfit on shapes
-                zoomOnDoubleClick: true                    // enable map to be zoomed in when double-clicking
-            };
+           map = L.map('map', {
+               layers: MQ.mapLayer(),
+               center: [29.951065, -90.071533],
+               zoom: 13
+           });
 
-            // construct an instance of MQA.TileMap with the options object
-            window.map = new MQA.TileMap(options);
-        });
 
-    </script>-->
+
+           L.control.scale().addTo(map);
+
+
+           cpts = new L.layerGroup();
+           cpts.addTo(map);
+
+
+
+           var potholes = new L.markerClusterGroup({
+               maxClusterRadius: 40
+           });
+           for (var i = 0; i < markers.length; i++) {
+               var latlng = new L.LatLng(markers[i].lat, markers[i].lng);
+               potholes.addLayer(new L.Circle(latlng, 10));
+           }
+           map.addLayer(potholes);
+       }
+       window.onload = init;
+
+       function routeit() {
+
+           var cpc = [], dir = MQ.routing.directions();
+
+           dir.route({
+               locations: [
+                   document.getElementById('orig').value,
+                   document.getElementById('dest').value
+               ]
+           });
+
+           if (rl) {
+               map.removeLayer(rl);
+           }
+
+           rl = MQ.routing.routeLayer({
+               directions: dir,
+               fitBounds: true,
+               ribbonOptions: {draggable: false}
+           });
+           rl.addTo(map);
+
+           map.addLayer(rl);
+       }
+       // Remember to include either the Leaflet 0.7.3 or the Leaflet 1.0.0-beta1 library
+/*
+       var myCenter = new L.LatLng(50.5, 30.51);
+       var map = new L.Map('map', {center: myCenter, zoom: 15});
+
+       var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+           attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+       }).addTo(map);
+
+       L.Routing.control({
+           plan: L.Routing.plan([[57.73, 11.94], [57.7, 11.9]], {
+               createMarker: function(i, wp, n) {
+                   return;
+               }.bind(this),
+           }),
+           addWaypoints: true,
+           draggableWaypoints: false,
+           routeWhileDragging: false,
+           fitSelectedRoutes: true,
+           lineOptions: {
+               styles: [
+                   {color: 'red', opacity: 0.15, weight: 9},
+                   {color: 'green', opacity: 0.8, weight: 6},
+                   {color: 'black', opacity: 1, weight: 2}
+               ]
+           },
+       }).addTo(map);
+*/
+    </script>
     <style>
         #map {
             width: 800px;
@@ -84,7 +150,8 @@
     <br>Create a route by hitting the Route button.  Then create control points by clicking the map.  Adjust the control points by clicking the circle for the popup and set the radius, set the weight, or remove the control point.  Then click Route again.</br>
     <input type="text" id="orig" value="new orleans, LA"/>
     <input type="text" id="dest" value="metarie, LA"/>
-    <!--<input type="button" id="route" onclick="routeit(); return false" value="Route" />-->
+    <input type="button" id="route" onclick="routeit();" value="Route" />
+
 
 </div>
 

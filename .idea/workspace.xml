@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Current File" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6c433b9-a52c-4acf-be7e-5af7ed1fa008" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/potholes.csv" />
+    <list default="true" id="f6c433b9-a52c-4acf-be7e-5af7ed1fa008" name="Default" comment="both layers (route and markers) showing">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CProute.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/MarkerCluster.Default.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/MarkerCluster.Default.ie.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/MarkerCluster.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/leaflet.label.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/screen.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/geometry.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/leaflet.featuregroup.subgroup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/leaflet.geocsv-src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/leaflet.geocsv.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/leaflet.label.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/leaflet.markercluster-src.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/leaflet.markercluster.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/leaflet.featuregroup.subgroup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MQleafletMC.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/MarkerCluster.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mapbox59.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/nearest-neighbors.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/directions.html" afterPath="$PROJECT_DIR$/old/directions.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/draft.html" afterPath="$PROJECT_DIR$/old/draft.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/external-mapbox.html" afterPath="$PROJECT_DIR$/old/external-mapbox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/maps/markers.js" afterPath="$PROJECT_DIR$/maps/potholeMarkers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/kellykrawczyk.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/kellykrawczyk.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/potholes.iml" afterPath="$PROJECT_DIR$/.idea/potholes.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/control-points.html" afterPath="$PROJECT_DIR$/control-points.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/routeit.js" afterPath="$PROJECT_DIR$/maps/routeit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/potholes.csv" afterPath="$PROJECT_DIR$/maps/potholes.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/testing.js" afterPath="$PROJECT_DIR$/maps/testing.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/presentation.html" afterPath="$PROJECT_DIR$/presentation.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,15 +54,27 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DockManager">
-    <window id="4">
+    <window id="9">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+            <file leaf-file-name="sample.html" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/sample.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="360">
+                    <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+                    <folding>
+                      <marker date="1494675040000" expanded="true" signature="1068:1074" ph="©" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
             <file leaf-file-name="control-points.html" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/control-points.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="67">
-                    <caret line="123" column="34" lean-forward="true" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+                  <state relative-caret-position="645">
+                    <caret line="43" column="67" lean-forward="true" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
                     <folding />
                   </state>
                 </provider>
@@ -48,14 +91,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="leaf-demo.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maps/leaf-demo.js">
+      <file leaf-file-name="leaflet.markercluster.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/leaflet.markercluster.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-              <folding>
-                <marker date="1494372734000" expanded="true" signature="503:509" ph="©" />
-              </folding>
+            <state relative-caret-position="-690">
+              <caret line="5" column="3980" lean-forward="false" selection-start-line="5" selection-start-column="3980" selection-end-line="5" selection-end-column="3980" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,61 +104,74 @@
       <file leaf-file-name="presentation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/presentation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+            <state relative-caret-position="540">
+              <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="35" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leaflet.geocsv-src.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/leaflet.geocsv-src.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-537">
+              <caret line="35" column="60" lean-forward="true" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <marker date="1494701119000" expanded="true" signature="3611:3617" ph="©" />
+                <marker date="1494701119000" expanded="true" signature="3699:3705" ph="©" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="draft.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/draft.html">
+      <file leaf-file-name="leaflet.markercluster-src.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/leaflet.markercluster-src.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="179">
+              <caret line="341" column="39" lean-forward="false" selection-start-line="341" selection-start-column="39" selection-end-line="341" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="external-mapbox.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/external-mapbox.html">
+      <file leaf-file-name="CProute.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CProute.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="1905">
+              <caret line="127" column="66" lean-forward="false" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routeit.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/maps/routeit.js">
+      <file leaf-file-name="potholeMarkers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maps/potholeMarkers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="geometry.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/geometry.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="825">
+              <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leaf-demo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/maps/leaf-demo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+              <folding>
+                <marker date="1494675317000" expanded="true" signature="503:509" ph="©" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,10 +179,10 @@
       <file leaf-file-name="testing.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maps/testing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="66" selection-end-column="1" />
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="57" selection-end-column="21" />
               <folding>
-                <marker date="1494562133000" expanded="true" signature="1917:1923" ph="©" />
+                <marker date="1494679040000" expanded="true" signature="1848:1854" ph="©" />
               </folding>
             </state>
           </provider>
@@ -139,8 +193,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -148,6 +202,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ipt</find>
+      <find>fa-e</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,12 +246,22 @@
         <option value="$PROJECT_DIR$/vectorMarker.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/mapbox59.html" />
-        <option value="$PROJECT_DIR$/maps/leaf-demo.js" />
         <option value="$PROJECT_DIR$/maps/routeit.js" />
         <option value="$PROJECT_DIR$/../../leaflet.geocsv-src.js" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/leaflet.featuregroup.subgroup.js" />
+        <option value="$PROJECT_DIR$/CProute" />
+        <option value="$PROJECT_DIR$/css/screen.css" />
+        <option value="$PROJECT_DIR$/maps/potholeMarkers.js" />
+        <option value="$PROJECT_DIR$/maps/potholes.csv" />
+        <option value="$PROJECT_DIR$/webapp/index.html" />
+        <option value="$PROJECT_DIR$/js/util.js" />
+        <option value="$PROJECT_DIR$/js/geometry.js" />
+        <option value="$PROJECT_DIR$/CProute.html" />
+        <option value="$PROJECT_DIR$/sample.html" />
+        <option value="$PROJECT_DIR$/maps/leaf-demo.js" />
         <option value="$PROJECT_DIR$/maps/testing.js" />
         <option value="$PROJECT_DIR$/control-points.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -207,10 +272,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-239" />
+    <option name="x" value="157" />
     <option name="y" value="23" />
-    <option name="width" value="951" />
-    <option name="height" value="752" />
+    <option name="width" value="928" />
+    <option name="height" value="803" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -250,6 +315,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="maps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -269,6 +348,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="leaflet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dist" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,10 +461,14 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/old" />
+      <recent name="$PROJECT_DIR$/js" />
       <recent name="$PROJECT_DIR$/maps" />
     </key>
   </component>
@@ -345,7 +484,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.control-points.html">
+    <configuration default="false" name="control-points.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/potholes/control-points.html">
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -412,6 +554,14 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.control-points.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.control-points.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -452,7 +602,8 @@
       <workItem from="1494344402525" duration="8000" />
       <workItem from="1494344434243" duration="20539000" />
       <workItem from="1494390149402" duration="4116000" />
-      <workItem from="1494535930060" duration="18218000" />
+      <workItem from="1494535930060" duration="63855000" />
+      <workItem from="1494675687179" duration="4660000" />
     </task>
     <task id="LOCAL-00001" summary="Updated control points">
       <created>1491864601878</created>
@@ -510,13 +661,20 @@
       <option name="project" value="LOCAL" />
       <updated>1494390376197</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="WORKING!!!">
+      <created>1494562931946</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1494562931946</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92130000" />
+    <option name="totallyTimeSpent" value="142427000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -526,14 +684,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-239" y="23" width="951" height="752" extended-state="0" />
+    <frame x="157" y="23" width="928" height="803" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22903226" sideWeight="0.4939394" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5043011" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23484014" sideWeight="0.4939394" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32770744" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994374" sideWeight="0.5043011" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3267544" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -545,6 +703,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287879" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -588,90 +747,16 @@
     <MESSAGE value="geojson markers" />
     <MESSAGE value="mapquest marker clusters" />
     <MESSAGE value="WORKING!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="WORKING!!!" />
+    <MESSAGE value="both layers (route and markers) showing" />
+    <option name="LAST_COMMIT_MESSAGE" value="both layers (route and markers) showing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/markers.js" />
-    <entry file="file://$PROJECT_DIR$/MQpotholes.js" />
-    <entry file="file://$PROJECT_DIR$/changepar.js" />
-    <entry file="file://$PROJECT_DIR$/init.js" />
-    <entry file="file://$PROJECT_DIR$/removepoi.js" />
-    <entry file="file://$PROJECT_DIR$/maps/routing.js" />
-    <entry file="file://$PROJECT_DIR$/data.json" />
-    <entry file="file://$PROJECT_DIR$/pothole-markers.html" />
-    <entry file="file://$PROJECT_DIR$/geometry.html" />
-    <entry file="file://$PROJECT_DIR$/history2.html" />
-    <entry file="file://$PROJECT_DIR$/history.html" />
-    <entry file="file://$PROJECT_DIR$/js/main.js" />
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet-basic.html" />
-    <entry file="file://$PROJECT_DIR$/javascript/basic-test.js" />
-    <entry file="file://$PROJECT_DIR$/maps/images/pin48.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maps/images/pin24.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/initmap.js" />
-    <entry file="file://$PROJECT_DIR$/maps/mapbox.js" />
-    <entry file="file://$PROJECT_DIR$/leaflet-routing-machine.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/markers.geojson">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337695">
-          <caret line="22513" column="2" lean-forward="false" selection-start-line="22513" selection-start-column="2" selection-end-line="22513" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jquery-2.1.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MarkerCluster.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/leaflet-routing-machine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -679,21 +764,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maps/markers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="22513" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/leaflet.markercluster.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="515">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -719,51 +793,145 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vectorMarker.html" />
-    <entry file="file://$PROJECT_DIR$/markers.geojson">
+    <entry file="file://$PROJECT_DIR$/open-layers.html" />
+    <entry file="file://$PROJECT_DIR$/maps/mapbox.html" />
+    <entry file="file://$PROJECT_DIR$/test.html" />
+    <entry file="file://$PROJECT_DIR$/../../leaflet.geocsv-src.js" />
+    <entry file="file://$PROJECT_DIR$/leaflet.geocsv-src.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/directions.html">
+    <entry file="file://$PROJECT_DIR$/Leaflet.geoCSV-master/example/bankia/bankias.csv" />
+    <entry file="file://$PROJECT_DIR$/maps/routeit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leaflet.geocsv-src.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MQleafletMC.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nearest-neighbors.html">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leaflet.featuregroup.subgroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leaflet.featuregroup.subgroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/potholes.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="21" lean-forward="true" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mapbox59.html">
+    <entry file="file://$PROJECT_DIR$/webapp/assets/css/L.control.Locate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/external-mapbox.html">
+    <entry file="file://$PROJECT_DIR$/webapp/assets/css/leaflet.awesome-markers.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/img/vehicles/heavy.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/img/vehicles/light.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/util.js" />
+    <entry file="file://$PROJECT_DIR$/js/app.js" />
+    <entry file="file://$PROJECT_DIR$/webapp/assets/js/Leaflet.GeometryUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6120">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="31" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/js/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="73" column="32" lean-forward="true" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/js/leaflet.awesome-markers.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/directions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/draft.html">
+    <entry file="file://$PROJECT_DIR$/old/draft.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
@@ -771,83 +939,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/open-layers.html" />
-    <entry file="file://$PROJECT_DIR$/maps/mapbox.html" />
-    <entry file="file://$PROJECT_DIR$/test.html" />
+    <entry file="file://$PROJECT_DIR$/mapbox59.html" />
+    <entry file="file://$PROJECT_DIR$/old/external-mapbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MarkerCluster.css" />
+    <entry file="file://$PROJECT_DIR$/markers.geojson">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MQleafletMC.html" />
+    <entry file="file://$PROJECT_DIR$/nearest-neighbors.html" />
+    <entry file="file://$PROJECT_DIR$/js/geometry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="57" column="41" lean-forward="false" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="106" column="104" lean-forward="true" selection-start-line="106" selection-start-column="104" selection-end-line="106" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/assets/js/easy-button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps/potholeMarkers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CProute.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1905">
+          <caret line="127" column="66" lean-forward="false" selection-start-line="127" selection-start-column="66" selection-end-line="127" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/presentation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../leaflet.geocsv-src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leaflet.geocsv-src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Leaflet.geoCSV-master/example/bankia/bankias.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/maps/routeit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/leaf-demo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+        <state relative-caret-position="105">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
-            <marker date="1494372734000" expanded="true" signature="503:509" ph="©" />
+            <marker date="1494675317000" expanded="true" signature="503:509" ph="©" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+          <folding>
+            <marker date="1494675040000" expanded="true" signature="1068:1074" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leaflet.markercluster.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-690">
+          <caret line="5" column="3980" lean-forward="false" selection-start-line="5" selection-start-column="3980" selection-end-line="5" selection-end-column="3980" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maps/testing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="66" selection-end-column="1" />
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="57" selection-end-column="21" />
           <folding>
-            <marker date="1494562133000" expanded="true" signature="1917:1923" ph="©" />
+            <marker date="1494679040000" expanded="true" signature="1848:1854" ph="©" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="35" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/control-points.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="123" column="34" lean-forward="true" selection-start-line="123" selection-start-column="34" selection-end-line="123" selection-end-column="34" />
+        <state relative-caret-position="645">
+          <caret line="43" column="67" lean-forward="true" selection-start-line="43" selection-start-column="67" selection-end-line="43" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-537">
+          <caret line="35" column="60" lean-forward="true" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+          <folding>
+            <marker date="1494701119000" expanded="true" signature="3611:3617" ph="©" />
+            <marker date="1494701119000" expanded="true" signature="3699:3705" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leaflet.markercluster-src.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="341" column="39" lean-forward="false" selection-start-line="341" selection-start-column="39" selection-end-line="341" selection-end-column="39" />
           <folding />
         </state>
       </provider>

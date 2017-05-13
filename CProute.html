@@ -1,0 +1,174 @@
+<html>
+<head>
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script> -->
+
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="js/leaflet.geocsv.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/screen.css" />
+
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+    <script src="http://www.mapquestapi.com/sdk/leaflet/v2.s/mq-geocoding.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+    <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-routing.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.4/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.0.4/dist/leaflet.markercluster.js"></script>
+
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup-src.js"></script>
+
+    <style>
+        .mycluster {
+            width: 40px;
+            height: 40px;
+            background-color: greenyellow;
+            text-align: center;
+            font-size: 24px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<input id="add" type="button" value="Add MarkerClusterGroup to Map" />
+<input id="remove" type="button" value="Remove MarkerClusterGroup from Map" />
+<input type="text" id="orig" value="new orleans, LA"/>
+<input type="button" id="start" value="Starting"/>
+
+<input type="text" id="dest" value="metarie, LA"/>
+<input type="button" id="route" value="Route" />
+
+
+<script src="maps/potholeMarkers.js"></script>
+
+
+<script type="application/javascript">
+
+    var map;
+    var mapLayer = MQ.mapLayer();
+    var fullCount = markers.length;
+    var quarterCount = Math.round(fullCount / 4);
+    var mqrl;
+
+    map = L.map('map', {
+        zoom: 13,
+        center: [ 29.951065, -90.071533 ],
+        layers: mapLayer
+    });
+
+
+
+    //var brControl = L.control.layers(baseLayers).addTo(map);
+    map.attributionControl.setPosition('bottomleft');
+
+
+    var mcg = L.markerClusterGroup({
+            maxClusterRadius: 40 }),
+        group1 = L.featureGroup.subGroup(mcg),
+        group2 = L.featureGroup.subGroup(mcg),
+        group3 = L.featureGroup.subGroup(mcg),
+        group4 = L.featureGroup.subGroup(mcg),
+        control = L.control.layers(null, null, { collapsed: false }),
+        i, marker;
+
+    mcg.addTo(map);
+
+
+    for (i = 0; i < markers.length; i++){
+
+        //marker = L.circleMarker(L.latLng(i.marker.lat, i.marker.lng));
+         marker = L.marker([markers[i].lat, markers[i].lng]);
+        marker.addTo(i < quarterCount ? group1 : i < quarterCount * 2 ? group2 : i < quarterCount * 3 ? group3 : group4)
+    }
+
+
+    control.addOverlay(group1, 'First quarter');
+    control.addOverlay(group2, 'Second quarter');
+    control.addOverlay(group3, 'Third quarter');
+    control.addOverlay(group4, 'Fourth quarter');
+    //control.addOverlay(mqrl, 'Route');
+    control.addTo(map);
+
+    group1.addTo(map); // Adding to map now adds all child layers into the parent group.
+    group2.addTo(map);
+    group3.addTo(map);
+    group4.addTo(map);
+
+    var dir = MQ.routing.directions();
+
+    dir.route({
+        locations: [
+            '2520 joseph street new orleans la',
+            '7217 st charles avenue new orleans la'
+        ]
+    });
+
+    CustomRouteLayer = MQ.Routing.RouteLayer.extend({
+        createStartMarker: function(location, stopNumber) {
+            var custom_icon;
+            var orig;
+
+            custom_icon = L.icon({
+                iconUrl: 'maps/images/pin24',
+                iconSize: [20, 29],
+                iconAnchor: [10, 29]
+            });
+            orig = L.marker(location.latlng, {icon: custom_icon}).addTo(map);
+            return orig;
+        },
+
+        createEndMarker: function(location, stopNumber) {
+            var custom_icon;
+            var dest;
+
+            custom_icon = L.icon({
+                iconUrl: 'maps/images/pin24',
+                iconSize: [20, 29],
+                iconAnchor: [10, 29]
+            });
+            dest = L.marker(location.latlng, {icon: custom_icon}).addTo(map);
+            return dest;        }
+    });
+
+    CustomRouteLayer.addTo(map);
+
+
+    mqrl = MQ.routing.routeLayer({
+        directions: dir,
+        fitBounds: true,
+        draggable: true,ribbonOptions: {draggable: true,ribbonDisplay: { color: '#0000FF', opacity: 0.3 },widths: [ 15, 15, 15, 15, 14, 13, 12, 12, 12, 11, 11, 11, 11, 12, 13, 14, 15 ]}});
+    mqrl.addTo(map);
+    control.addLayer(mqrl, 'Route');
+
+
+    // Set-up buttons.
+
+    document.getElementById("add").addEventListener("click", function () {
+        map.addLayer(mcg);
+    });
+
+    document.getElementById("remove").addEventListener("click", function () {
+        map.removeLayer(mcg);
+    });
+
+    document.getElementById("route").addEventListener("click", function () {
+        //map.removeLayer(mcg);
+        map.addLayer(mqrl);
+    });
+
+</script>
+
+</body>
+</html>

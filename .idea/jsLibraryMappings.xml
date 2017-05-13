@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{OpenLayers, jquery, jquery-2.1.1, leaflet, leaflet.markercluster, mapbox, mapbox-gl, mapbox-gl-directions, mapbox.directions}" />
+    <file url="PROJECT" libraries="{L.Control.Locate, OpenLayers, bootstrap, handlebars, jquery, jquery-1.11.1, jquery-2.1.1, leaflet, leaflet-routing-machine, leaflet.featuregroup.subgroup, leaflet.featuregroup.subgroup-src, leaflet.markercluster, leaflet.markercluster-src, list, mapbox, mapbox-gl, mapbox-gl-directions, mapbox.directions, typeahead.bundle}" />
     <includedPredefinedLibrary name="WebGL" />
   </component>
 </project>

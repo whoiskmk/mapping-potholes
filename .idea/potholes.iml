@@ -21,5 +21,15 @@
     <orderEntry type="library" name="mapbox.directions" level="application" />
     <orderEntry type="library" name="jquery-2.1.1" level="application" />
     <orderEntry type="library" name="OpenLayers" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="leaflet.markercluster-src" level="application" />
+    <orderEntry type="library" name="leaflet.featuregroup.subgroup-src" level="application" />
+    <orderEntry type="library" name="leaflet.featuregroup.subgroup" level="application" />
+    <orderEntry type="library" name="jquery-1.11.1" level="application" />
+    <orderEntry type="library" name="typeahead.bundle" level="application" />
+    <orderEntry type="library" name="handlebars" level="application" />
+    <orderEntry type="library" name="list" level="application" />
+    <orderEntry type="library" name="L.Control.Locate" level="application" />
+    <orderEntry type="library" name="leaflet-routing-machine" level="application" />
   </component>
 </module>

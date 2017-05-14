@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="leaflet/leaflet.css" />
     <script src="leaflet/leaflet.js"></script>
 
+
     <!--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
    <!-- <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
     <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
@@ -26,6 +27,7 @@
     <link rel="stylesheet" href="dist/MarkerCluster.Default.css" />
     <script src="dist/leaflet.markercluster-src.js"></script>
 
+
     <script src="http://www.mapquestapi.com/sdk/js/v7.2.s/mqa.toolkit.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
 
     <script type="text/javascript" src="//www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=CI6VvHdudeE9WTpCx0ptrvgzJGSiOYYW"></script>
@@ -39,7 +41,7 @@
     <script type="text/javascript">
        // "use strict";
 
-       var map, L, MQ, potholes, rl, idx = 0;
+       var map, L, MQ, cpts, rl, idx = 0;
 
        function init() {
 
@@ -54,18 +56,29 @@
            L.control.scale().addTo(map);
 
 
-           //cpts = new L.layerGroup();
-           //cpts.addTo(map);
+           cpts = new L.layerGroup();
+           cpts.addTo(map);
 
 
 
-           potholes = new L.markerClusterGroup({
+           var potholeCluster = new L.markerClusterGroup({
                maxClusterRadius: 30,
                removeOutsideVisibleBounds: true
            });
            for (var i = 0; i < markers.length; i++) {
                var latlng = new L.LatLng(markers[i].lat, markers[i].lng);
-               potholes.addLayer(new L.Circle(latlng, 10,
+
+               var potholeMarker = new L.Circle(latlng, 10,
+                   {
+                       id: idx,
+                       cweight: 100,
+                       color: 'red',
+                       fillColor: 'red',
+                       opacity: 1,
+                       fillOpacity: 0.5
+                   }
+                   ).addTo(potholeCluster);
+               /*potholes.addLayer(new L.Circle(latlng, 10,
                    {
                        id: idx,
                        cweight: 100,
@@ -73,10 +86,11 @@
                        fillColor: 'red',
                        opacity: 1,
                        fillOpacity: 0.5
-                   }));
-               //potholes.addTo(cpts);
+                   }));*/
 
-               map.addLayer(potholes);
+               potholeCluster.addTo(cpts);
+
+               //map.addLayer(potholes);
                //var visibleOne = potholes.getVisibleParent(i);
 
                //idx = idx + 1;
@@ -91,10 +105,9 @@
 
            var cpc = [], dir = MQ.routing.directions();
 
-           map.eachLayer(function(layer){
+           cpts.eachLayer(function(layer){
 
                if (layer.getChildCount > 20) {
-
                    cpc.push({
                        lat: layer.lat,
                        lng: layer.lng,
@@ -103,7 +116,6 @@
                    });
                }
                if (layer.getChildCount < 20 && layer.getChildCount > 10) {
-
                    cpc.push({
                        lat: layer.lat,
                        lng: layer.lng,
@@ -112,7 +124,6 @@
                    });
                }
                if (layer.getChildCount < 10 && layer.getChildCount > 5) {
-
                    cpc.push({
                        lat: layer.lat,
                        lng: layer.lng,
@@ -121,7 +132,6 @@
                    });
                }
                if (layer.getChildCount < 5 && layer.getChildCount > 2) {
-
                    cpc.push({
                        lat: layer.lat,
                        lng: layer.lng,
@@ -130,14 +140,16 @@
                    });
                }
                if (layer.getChildCount < 2) {
-
                    cpc.push({
                        lat: layer.lat,
                        lng: layer.lng,
-                       weight: 0.99,
+                       weight: 0.9,
                        radius: 0.1
                    });
                }
+
+
+
            });
 
 
@@ -241,8 +253,8 @@
 <div id="ipt">
     <p>Click on a cluster to zoom in and see a closer look at potholes, or enter a starting point and destination to find the most efficient route.</p>
 
-    <input type="text" id="orig" value=""/>
-    <input type="text" id="dest" value=""/>
+    <input type="text" id="orig" value="2520 joseph street, new orleans la"/>
+    <input type="text" id="dest" value="7701 Walmsley Ave, New Orleans, LA 70125"/>
     <input type="button" id="route" onclick="routeit();" value="Route" />
 
 

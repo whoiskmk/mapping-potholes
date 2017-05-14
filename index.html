@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Pothole Clusters</title>
+    <title>New Orleans Directions for Potholes</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" />
@@ -39,7 +39,7 @@
     <script type="text/javascript">
        // "use strict";
 
-       var map, L, MQ, cpts, rl;
+       var map, L, MQ, potholes, rl, idx = 0;
 
        function init() {
 
@@ -54,19 +54,36 @@
            L.control.scale().addTo(map);
 
 
-           cpts = new L.layerGroup();
-           cpts.addTo(map);
+           //cpts = new L.layerGroup();
+           //cpts.addTo(map);
 
 
 
-           var potholes = new L.markerClusterGroup({
-               maxClusterRadius: 40
+           potholes = new L.markerClusterGroup({
+               maxClusterRadius: 30,
+               removeOutsideVisibleBounds: true
            });
            for (var i = 0; i < markers.length; i++) {
                var latlng = new L.LatLng(markers[i].lat, markers[i].lng);
-               potholes.addLayer(new L.Circle(latlng, 10));
+               potholes.addLayer(new L.Circle(latlng, 10,
+                   {
+                       id: idx,
+                       cweight: 100,
+                       color: 'black',
+                       fillColor: 'red',
+                       opacity: 1,
+                       fillOpacity: 0.5
+                   }));
+               //potholes.addTo(cpts);
+
+               map.addLayer(potholes);
+               //var visibleOne = potholes.getVisibleParent(i);
+
+               //idx = idx + 1;
            }
-           map.addLayer(potholes);
+
+
+
        }
        window.onload = init;
 
@@ -74,11 +91,83 @@
 
            var cpc = [], dir = MQ.routing.directions();
 
+           map.eachLayer(function(layer){
+
+               if (layer.getChildCount > 20) {
+
+                   cpc.push({
+                       lat: layer.lat,
+                       lng: layer.lng,
+                       weight: 100,
+                       radius: 1
+                   });
+               }
+               if (layer.getChildCount < 20 && layer.getChildCount > 10) {
+
+                   cpc.push({
+                       lat: layer.lat,
+                       lng: layer.lng,
+                       weight: 50,
+                       radius: 0.75
+                   });
+               }
+               if (layer.getChildCount < 10 && layer.getChildCount > 5) {
+
+                   cpc.push({
+                       lat: layer.lat,
+                       lng: layer.lng,
+                       weight: 25,
+                       radius: 0.1
+                   });
+               }
+               if (layer.getChildCount < 5 && layer.getChildCount > 2) {
+
+                   cpc.push({
+                       lat: layer.lat,
+                       lng: layer.lng,
+                       weight: 10,
+                       radius: 0.1
+                   });
+               }
+               if (layer.getChildCount < 2) {
+
+                   cpc.push({
+                       lat: layer.lat,
+                       lng: layer.lng,
+                       weight: 0.99,
+                       radius: 0.1
+                   });
+               }
+           });
+
+
+          /* cpts.eachLayer(function (d) {
+
+               var w = 0;
+
+               if (d.options.fillColor === 'red') {
+
+                   w = d.options.fillOpacity * 200;
+               } else {
+                   w = 1 - (d.options.fillOpacity * 2)
+               }
+               cpc.push({
+                   lat: d.lat,
+                   lng: d.lng,
+                   weight: w,
+                   radius: 0.1
+               });
+           });*/
+
+
            dir.route({
                locations: [
                    document.getElementById('orig').value,
                    document.getElementById('dest').value
-               ]
+               ],
+               options: {
+                   routeControlPointCollection: cpc
+               }
            });
 
            if (rl) {
@@ -94,6 +183,7 @@
 
            map.addLayer(rl);
        }
+
        // Remember to include either the Leaflet 0.7.3 or the Leaflet 1.0.0-beta1 library
 /*
        var myCenter = new L.LatLng(50.5, 30.51);
@@ -136,10 +226,12 @@
 <body>
 <div class="container">
     <div class="container">
-        <h1>Leaflet Pothole Clusters</h1>
+        <h1>New Orleans Directions for Potholes</h1>
+        <h2>Clusters of Potholes</h2>
 
         <p>Here's an interactive map indicating where potholes are located in New Orleans.  The data comes from <a href="https://data.nola.gov/City-Administration/311-Calls-2012-Present-/3iz8-nghx" target="_blank">NOLA.gov</a>.
 
+        <p>Click on a cluster to zoom in and see a closer look at potholes, or enter a starting point and destination to find the most efficient route.</p>
     </div>
 </div>
 <div id="map"></div>
@@ -147,9 +239,10 @@
 
 
 <div id="ipt">
-    <br>Create a route by hitting the Route button.  Then create control points by clicking the map.  Adjust the control points by clicking the circle for the popup and set the radius, set the weight, or remove the control point.  Then click Route again.</br>
-    <input type="text" id="orig" value="new orleans, LA"/>
-    <input type="text" id="dest" value="metarie, LA"/>
+    <p>Click on a cluster to zoom in and see a closer look at potholes, or enter a starting point and destination to find the most efficient route.</p>
+
+    <input type="text" id="orig" value=""/>
+    <input type="text" id="dest" value=""/>
     <input type="button" id="route" onclick="routeit();" value="Route" />
 
 

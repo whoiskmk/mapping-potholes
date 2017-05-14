@@ -41,7 +41,7 @@
     <script type="text/javascript">
        // "use strict";
 
-       var map, L, MQ, cpts, rl, idx = 0;
+       var map, L, MQ, cpts, potholeCluster, rl, idx = 0;
 
        function init() {
 
@@ -56,12 +56,11 @@
            L.control.scale().addTo(map);
 
 
+
            cpts = new L.layerGroup();
            cpts.addTo(map);
 
-
-
-           var potholeCluster = new L.markerClusterGroup({
+           potholeCluster = new L.markerClusterGroup({
                maxClusterRadius: 30,
                removeOutsideVisibleBounds: true
            });
@@ -77,17 +76,7 @@
                        opacity: 1,
                        fillOpacity: 0.5
                    }
-                   ).addTo(potholeCluster);
-               /*potholes.addLayer(new L.Circle(latlng, 10,
-                   {
-                       id: idx,
-                       cweight: 100,
-                       color: 'black',
-                       fillColor: 'red',
-                       opacity: 1,
-                       fillOpacity: 0.5
-                   }));*/
-
+               ).addTo(potholeCluster);
                potholeCluster.addTo(cpts);
 
                //map.addLayer(potholes);
@@ -103,7 +92,27 @@
 
        function routeit() {
 
-           var cpc = [], dir = MQ.routing.directions();
+           var cpc = [], dir = MQ.routing.directions()
+               .on('success', function(data){
+                   var legs = data.route.legs,
+                       html = '',
+                       maneuvers,
+                       i;
+
+                   if (legs && legs.length) {
+                       maneuvers = legs[0].maneuvers;
+
+                       for (i = 0; i < maneuvers.length; i++) {
+
+                           html += (i+1) + '. ';
+                           html += maneuvers[i].narrative + '';
+                       }
+                       L.DomUtil.get('route-narrative').innerHTML = html;
+                   }
+
+           });
+
+
 
            cpts.eachLayer(function(layer){
 
@@ -151,7 +160,6 @@
 
 
            });
-
 
           /* cpts.eachLayer(function (d) {
 
@@ -230,7 +238,9 @@
             width: 800px;
             height: 600px;
         }
+
     </style>
+
 
 
 </head>
@@ -247,14 +257,14 @@
     </div>
 </div>
 <div id="map"></div>
-
+<div id="route-narrative"></div>
 
 
 <div id="ipt">
     <p>Click on a cluster to zoom in and see a closer look at potholes, or enter a starting point and destination to find the most efficient route.</p>
 
-    <input type="text" id="orig" value="2520 joseph street, new orleans la"/>
-    <input type="text" id="dest" value="7701 Walmsley Ave, New Orleans, LA 70125"/>
+    <input type="text" id="orig" value=""/>
+    <input type="text" id="dest" value=""/>
     <input type="button" id="route" onclick="routeit();" value="Route" />
 
 

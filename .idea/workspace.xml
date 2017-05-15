@@ -6,6 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6c433b9-a52c-4acf-be7e-5af7ed1fa008" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/old/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,6 +22,29 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/old/index.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="38">
+                    <caret line="256" column="10" lean-forward="true" selection-start-line="256" selection-start-column="10" selection-end-line="256" selection-end-column="10" />
+                    <folding>
+                      <marker date="1494864129000" expanded="true" signature="6801:6807" ph="©" />
+                      <marker date="1494864129000" expanded="true" signature="6889:6895" ph="©" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="potholes" />
@@ -30,8 +54,8 @@
       <file leaf-file-name="sample.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/old/sample.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+            <state relative-caret-position="158">
+              <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding>
                 <marker date="1494753259000" expanded="true" signature="1077:1083" ph="©" />
               </folding>
@@ -49,21 +73,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="leaflet.markercluster.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/leaflet.markercluster.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1494863761000" expanded="true" signature="6783:6789" ph="©" />
-                <marker date="1494863761000" expanded="true" signature="6871:6877" ph="©" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leaflet.markercluster.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/leaflet.markercluster.js">
+      <file leaf-file-name="leaflet.markercluster-src.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/leaflet.markercluster-src.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -94,16 +117,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="leaflet-routing-machine.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/old/leaflet-routing-machine.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="leaflet-routing-machine.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/old/leaflet-routing-machine.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -124,10 +137,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CProute.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CProute.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/old/CProute.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1560">
+            <state relative-caret-position="695">
               <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
               <folding />
             </state>
@@ -218,7 +231,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="152" />
+    <option name="x" value="73" />
     <option name="y" value="23" />
     <option name="width" value="867" />
     <option name="height" value="803" />
@@ -262,6 +275,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="potholes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="old" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -365,9 +392,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/old" />
       <recent name="$PROJECT_DIR$/dist" />
       <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$/old" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/css" />
     </key>
@@ -501,7 +528,7 @@
       <workItem from="1494675687179" duration="16668000" />
       <workItem from="1494726721905" duration="7804000" />
       <workItem from="1494826101761" duration="93000" />
-      <workItem from="1494863508143" duration="273000" />
+      <workItem from="1494863508143" duration="614000" />
     </task>
     <task id="LOCAL-00001" summary="Updated control points">
       <created>1491864601878</created>
@@ -601,11 +628,25 @@
       <option name="project" value="LOCAL" />
       <updated>1494826130345</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Final">
+      <created>1494863840362</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1494863840362</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Final">
+      <created>1494863892435</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1494863892435</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162605000" />
+    <option name="totallyTimeSpent" value="162946000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -617,10 +658,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="152" y="23" width="867" height="803" extended-state="0" />
+    <frame x="73" y="23" width="867" height="803" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24567474" sideWeight="0.4939394" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24567474" sideWeight="0.4939394" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32630098" sideWeight="0.49617592" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32561308" sideWeight="0.5038241" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3160763" sideWeight="0.49617592" order="9" side_tool="false" content_ui="tabs" />
@@ -691,7 +732,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.html" />
     <entry file="file://$PROJECT_DIR$/../../leaflet.geocsv-src.js" />
     <entry file="file://$PROJECT_DIR$/Leaflet.geoCSV-master/example/bankia/bankias.csv" />
     <entry file="file://$PROJECT_DIR$/maps/routeit.js">
@@ -959,21 +999,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/old/sample.html">
+    <entry file="file://$PROJECT_DIR$/dist/leaflet.markercluster.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1494753259000" expanded="true" signature="1077:1083" ph="©" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/CProute.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,23 +1025,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1494863761000" expanded="true" signature="6783:6789" ph="©" />
-            <marker date="1494863761000" expanded="true" signature="6871:6877" ph="©" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/leaflet.markercluster.js">
+    <entry file="file://$PROJECT_DIR$/dist/leaflet.markercluster-src.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/sample.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <marker date="1494753259000" expanded="true" signature="1077:1083" ph="©" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/CProute.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="256" column="10" lean-forward="true" selection-start-line="256" selection-start-column="10" selection-end-line="256" selection-end-column="10" />
+          <folding>
+            <marker date="1494864129000" expanded="true" signature="6801:6807" ph="©" />
+            <marker date="1494864129000" expanded="true" signature="6889:6895" ph="©" />
           </folding>
         </state>
       </provider>
